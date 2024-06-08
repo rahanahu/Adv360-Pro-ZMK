@@ -3,7 +3,7 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/backlight.h>
-#iclude "keycode_japanese.h"
+#include "keycode_japanese.h"
 
 #define SP SPACE
 #define MUHE INT_MUHENKAN
