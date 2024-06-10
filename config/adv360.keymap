@@ -62,7 +62,7 @@
       kr: kill_ring {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
-          bindings = <&skp K>, <&macro_c_k>;
+          bindings = <&kp K>, <&macro_c_k>;
           mods = <(MOD_LCTL)>;
       };
 
