@@ -22,8 +22,8 @@
     }; \
 }
 
-COMBO(c-a, 0, 29 66, &kp HOME, 100);
-COMBO(c-e, 0, 17 66, &kp END, 100);
+COMBO(c-a, 0, 29 66, &kp HOME, 135);
+COMBO(c-e, 0, 17 66, &kp END, 135);
 
 / {
     behaviors {
