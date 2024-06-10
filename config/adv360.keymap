@@ -9,22 +9,24 @@
 #define MUHE INT_MUHENKAN
 #define HENK INT_HENKAN
 
+#define COMBO(NAME, LAYERS, KEYPOS, BINDINGS) \
+/ { \
+    combos { \
+        compatible = "zmk,combos"; \
+        combo_##NAME { \
+            bindings = <BINDINGS>; \
+            key-positions = <KEYPOS>; \
+            layers = <LAYERS>; \
+            timeout-ms = <60>; \
+        }; \
+    }; \
+}
+
+COMBO(c-a, 0, 31 68, &kp HOME);
+COMBO(c-a, 0, 19 68, &kp END);
+
+
 / {
-
-    combos {
-        compatible = "zmk,combos";
-        combo_home {
-            timeout-ms = <100>;
-            key-positions = <31 68>;
-            bindings = <&kp HOME>;
-        };
-        combo_end {
-            timeout-ms = <100>;
-            key-positions = <19 68>;
-            bindings = <&kp END>;
-        };
-    };
-
     behaviors {
       #include "macros.dtsi"
       #include "version.dtsi"
