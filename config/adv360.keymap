@@ -22,8 +22,10 @@
     }; \
 }
 
-COMBO(c-a, 0, 31 68, &kp HOME, 100);
-COMBO(c-e, 0, 0 1, &kp END,100);
+COMBO(c-a, 0, 31 0, &kp HOME, 100);
+COMBO(c-e, 0, 19 0, &kp END,100);
+COMBO(c-f, 0, 0 68, &kp END,100);
+
 
 
 / {
