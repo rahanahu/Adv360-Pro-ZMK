@@ -9,7 +9,7 @@
 #define MUHE INT_MUHENKAN
 #define HENK INT_HENKAN
 
-#define COMBO(NAME, LAYERS, KEYPOS, BINDINGS) \
+#define COMBO(NAME, LAYERS, KEYPOS, BINDINGS, TIMEOUT) \
 / { \
     combos { \
         compatible = "zmk,combos"; \
@@ -17,13 +17,13 @@
             bindings = <BINDINGS>; \
             key-positions = <KEYPOS>; \
             layers = <LAYERS>; \
-            timeout-ms = <60>; \
+            timeout-ms = <TIMEOUT>; \
         }; \
     }; \
 }
 
-COMBO(c-a, 0, 31 68, &kp HOME);
-COMBO(c-a, 0, 19 68, &kp END);
+COMBO(c-a, 0, 31 68, &kp HOME, 100);
+COMBO(c-e, 0, 0 1, &kp END,100);
 
 
 / {
