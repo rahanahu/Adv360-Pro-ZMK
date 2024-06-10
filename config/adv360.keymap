@@ -10,6 +10,21 @@
 #define HENK INT_HENKAN
 
 / {
+
+    combos {
+        compatible = "zmk,combos";
+        combo_home {
+            timeout-ms = <1>;
+            key-positions = <31 68>;
+            bindings = <&kp HOME>;
+        };
+        combo_end {
+            timeout-ms = <1>;
+            key-positions = <19 68>;
+            bindings = <&kp END>;
+        };
+    };
+
     behaviors {
       #include "macros.dtsi"
       #include "version.dtsi"
@@ -55,6 +70,10 @@
 
   keymap {
     compatible = "zmk,keymap";
+//14
+//28
+//46
+//60
 
     default_layer {
       bindings = <
