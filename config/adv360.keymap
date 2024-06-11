@@ -22,8 +22,8 @@
     }; \
 }
 
-COMBO(c-a, 0, 29 66, &kp HOME, 135);
-COMBO(c-e, 0, 17 66, &kp END, 135);
+// COMBO(c-a, 0, 29 66, &kp HOME, 135);
+// COMBO(c-e, 0, 17 66, &kp END, 135);
 
 / {
     behaviors {
@@ -60,6 +60,19 @@ COMBO(c-e, 0, 17 66, &kp END, 135);
           bindings = <&kp>, <&kp>;
       };
 
+      ca: rctrl-a {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&kp A>, <&kp HOME>;
+          mods = <(MOD_RCTL)>;
+      };
+      ce: rctrl-e {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&kp E>, <&kp END>;
+          mods = <(MOD_RCTL)>;
+      };
+
       kr: kill_ring {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
@@ -79,8 +92,8 @@ COMBO(c-e, 0, 17 66, &kp END, 135);
     default_layer {
       bindings = <
         &kp ESC   &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog 1                                                                                &mo 3         &kp N6  &kp N7 &kp N8    &kp N9      &kp N0      &kp MINUS
-        &kp TAB   &kp Q     &kp W    &kp E    &kp R      &kp T  &none                                                                                 &kp JP_AT     &kp Y   &kp U  &kp I     &kp O       &kp P       &kp JP_YEN
-        &kp LCTRL &kp A     &kp S    &kp D    &kp F      &kp G  &none              &kp LCTRL &kp HOME        &kp PG_UP  &kp RCTRL                     &kp JP_MINUS  &kp H   &kp J  &kr       &kp L       &kp SEMI    &kp SQT
+        &kp TAB   &kp Q     &kp W    &ce      &kp R      &kp T  &none                                                                                 &kp JP_AT     &kp Y   &kp U  &kp I     &kp O       &kp P       &kp JP_YEN
+        &kp LCTRL &ca       &kp S    &kp D    &kp F      &kp G  &none              &kp LCTRL &kp HOME        &kp PG_UP  &kp RCTRL                     &kp JP_MINUS  &kp H   &kp J  &kr       &kp L       &kp SEMI    &kp SQT
         &sk LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                               &kp END         &kp PG_DN                                              &kp N   &kp M  &kp COMMA &kp DOT     &kp FSLH    &kp JP_BSLH
         &mo 2     &kp GRAVE &kp LALT &kp LEFT &kp RIGHT     &sands LSHFT SP &sands LCTRL DEL &mt LALT MUHE   &hm LGUI HENK &kp BSPC &kp ENTER                               &kp UP &kp DOWN  &kp JP_LBKT &kp JP_RBKT &mo 2
       >;
