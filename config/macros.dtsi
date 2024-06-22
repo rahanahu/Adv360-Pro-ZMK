@@ -40,9 +40,9 @@
     #binding-cells = <0>;
     bindings = <&kp HOME>, <&kp LS(END)>, <&kp LC(X)>; // 一行削除
   };
-  // t3l: t3l {
-  //   compatible= "zmk,behavior-macro-two-param";
-  //   label = "togle_3_layer";
-  //   #binding-cells = <2>;
-  //   bindings = <&macro_param_1to1>, <&tog MACRO_PLACEHOLDER>, <&macro_param_2to1>, <&tog MACRO_PLACEHOLDER>;
-  // };
+  t3l: t3l {
+    compatible= "zmk,behavior-macro-two-param";
+    label = "togle_3_layer";
+    #binding-cells = <2>;
+    bindings = <&macro_param_1to1>, <&tog MACRO_PLACEHOLDER>, <&macro_param_2to1>, <&tog MACRO_PLACEHOLDER>;
+  };
