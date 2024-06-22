@@ -41,3 +41,9 @@
     bindings = <&kp HOME>, <&kp LS(END)>, <&kp LC(X)>; // 一行削除
   };
 
+  t3l: toggle_3_layer {
+    compatible= "zmk,behavior-macro-two-param";
+    label = "t3l";
+    #binding-cells = <2>;
+    bindings = <&macro_param_1to2>, <&tg BT_SEL MACRO_PLACEHOLDER>, <&macro_param_2to1>, <&tg MACRO_PLACEHOLDER>;
+  };
