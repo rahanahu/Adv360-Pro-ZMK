@@ -8,11 +8,16 @@
 #define SP SPACE
 #define MUHE INT_MUHENKAN
 #define HENK INT_HENKAN
-#define DEFAULT 0
-#define NOSANDS 1
-#define FN 2
-#define MOD 3
 #define CpApD LC(LA(DEL))
+
+
+// layer number
+#define DEFAULT 0
+#define NEWDEF  1
+#define NOSANDS 2
+#define FN 3
+#define MOD 4
+
 
 
 #define COMBO(NAME, LAYERS, KEYPOS, BINDINGS, TIMEOUT) \
@@ -79,6 +84,19 @@
           mods = <(MOD_RCTL)>;
       };
 
+      ch: rctrl-h {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&kp H>, <&kp BSPC>;
+          mods = <(MOD_RCTL)>;
+      };
+      cd: rctrl-d {
+          compatible = "zmk,behavior-mod-morph";
+          #binding-cells = <0>;
+          bindings = <&kp E>, <&kp DEL>;
+          mods = <(MOD_RCTL)>;
+      };
+
       kr: kill_ring {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
@@ -97,11 +115,21 @@
 
     default_layer {
       bindings = <
-        &kp ESC   &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog NOSANDS                                                                          &kp JP_AT     &kp N6  &kp N7 &kp N8    &kp N9      &kp N0      &kp JP_CARET
+        &kp ESC   &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog NEWDEF                                                                           &kp JP_AT     &kp N6  &kp N7 &kp N8    &kp N9      &kp N0      &kp JP_CARET
         &kp TAB   &kp Q     &kp W    &ce      &kp R      &kp T  &kp LC(INS)                                                                           &kp JP_CARET  &kp Y   &kp U  &kp I     &kp O       &kp P       &kp JP_YEN
         &kp LCTRL &ca       &kp S    &kp D    &kp F      &kp G  &kp LS(INS)        &kp RCTRL &kp HOME        &kp PG_UP  &kp RCTRL                     &kp JP_MINUS  &kp H   &kp J  &kr       &kp L       &kp SEMI    &kp SQT
         &sk LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                               &kp END         &kp PG_DN                                              &kp N   &kp M  &kp COMMA &kp DOT     &kp FSLH    &kp JP_BSLH
         &mo FN    &kp GRAVE &kp LALT &kp LEFT &kp RIGHT     &sands LSHFT SP &sands RCTRL DEL &mt LALT MUHE   &hm LGUI HENK &kp BSPC &kp ENTER                               &kp UP &kp DOWN  &kp JP_LBKT &kp JP_RBKT &mo MOD
+      >;
+    };
+
+    new_default {
+      bindings = <
+        &kp ESC   &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &t3l NEWDEF NOSANDS                                                                   &kp JP_AT     &kp N6  &kp N7 &kp N8    &kp N9      &kp N0      &kp JP_CARET
+        &kp TAB   &kp Q     &kp W    &ce      &kp R      &kp T  &kp LC(INS)                                                                           &kp JP_CARET  &kp Y   &kp U  &kp I     &kp O       &kp P       &kp JP_YEN
+        &kp LCTRL &ca       &kp S    &cd      &kp F      &kp G  &kp LS(INS)        &kp RCTRL &kp HOME        &kp PG_UP  &kp RCTRL                     &kp JP_MINUS  &ch     &kp J  &kr       &kp L       &kp SEMI    &kp SQT
+        &sk LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                               &kp END         &kp PG_DN                                              &kp N   &kp M  &kp COMMA &kp DOT     &kp FSLH    &kp JP_BSLH
+        &mo FN    &kp GRAVE &kp LALT &kp LEFT &kp RIGHT                    &kp SP &kp RCTRL  &mt LALT MUHE   &hm LGUI HENK &kp LSHFT &kp ENTER                               &kp UP &kp DOWN  &kp JP_LBKT &kp JP_RBKT &mo MOD
       >;
     };
     nosands {
@@ -115,7 +143,7 @@
     };
     fn {
       bindings = <
-        &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5  &tog NOSANDS                                    &trans &kp F6 &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
+        &trans &kp F1 &kp F2 &kp F3 &kp F4 &kp F5  &trans                                          &trans &kp F6 &kp F7     &kp F8     &kp F9     &kp F10    &kp F11
         &trans &trans &trans &trans &trans &trans  &kp LC(LA(DEL))                                 &trans &trans &kp KP_N7  &kp KP_N8  &kp KP_N9  &trans     &kp F12 
         &trans &trans &trans &trans &trans &trans  &none        &trans &trans &trans &trans        &trans &trans &kp KP_N4  &kp KP_N5  &kp KP_N6  &trans     &trans 
         &trans &trans &trans &trans &trans &trans                      &trans &trans                      &trans &kp KP_N1  &kp KP_N2  &kp KP_N3  &trans     &trans  
