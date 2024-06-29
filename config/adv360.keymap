@@ -93,7 +93,7 @@
       cd: rctrl-d {
           compatible = "zmk,behavior-mod-morph";
           #binding-cells = <0>;
-          bindings = <&kp E>, <&kp DEL>;
+          bindings = <&kp D>, <&kp DEL>;
           mods = <(MOD_RCTL)>;
       };
 
