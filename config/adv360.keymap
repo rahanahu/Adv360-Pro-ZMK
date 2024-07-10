@@ -117,17 +117,17 @@
       bindings = <
         &kp ESC   &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &tog NEWDEF                                                                           &kp JP_AT     &kp N6  &kp N7 &kp N8    &kp N9      &kp N0      &kp JP_CARET
         &kp TAB   &kp Q     &kp W    &ce      &kp R      &kp T  &kp LC(INS)                                                                           &kp JP_CARET  &kp Y   &kp U  &kp I     &kp O       &kp P       &kp JP_YEN
-        &kp LCTRL &ca       &kp S    &kp D    &kp F      &kp G  &kp LS(INS)          &kp DEL &kp HOME        &kp PG_UP  &kp RCTRL                     &kp JP_MINUS  &kp H   &kp J  &kr       &kp L       &kp SEMI    &kp SQT
+        &kp LCTRL &ca       &kp S    &cd      &kp F      &kp G  &kp LS(INS)          &kp DEL &kp HOME        &kp PG_UP  &kp RCTRL                     &kp JP_MINUS  &ch     &kp J  &kr       &kp L       &kp SEMI    &kp SQT
         &sk LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                               &kp END         &kp PG_DN                                              &kp N   &kp M  &kp COMMA &kp DOT     &kp FSLH    &kp JP_BSLH
         &mo FN    &kp GRAVE &kp LALT &kp LEFT &kp RIGHT            &sands LSHFT SP &kp RCTRL &mt LALT MUHE   &hm LGUI HENK &kp BSPC &kp ENTER                               &kp UP &kp DOWN  &kp JP_LBKT &kp JP_RBKT &mo MOD
       >;
-    };
+    }; 
 
     new_default {
       bindings = <
         &kp ESC   &kp N1    &kp N2   &kp N3   &kp N4     &kp N5 &t3l NEWDEF NOSANDS                                                                   &kp JP_AT     &kp N6  &kp N7 &kp N8    &kp N9      &kp N0      &kp JP_CARET
         &kp TAB   &kp Q     &kp W    &ce      &kp R      &kp T  &kp LC(INS)                                                                           &kp JP_CARET  &kp Y   &kp U  &kp I     &kp O       &kp P       &kp JP_YEN
-        &kp LCTRL &ca       &kp S    &cd      &kp F      &kp G  &kp LS(INS)        &kp RCTRL &kp HOME        &kp PG_UP  &kp RCTRL                     &kp JP_MINUS  &ch     &kp J  &kr       &kp L       &kp SEMI    &kp SQT
+        &kp LCTRL &ca       &kp S    &cd      &kp F      &kp G  &kp LS(INS)          &kp DEL &kp HOME        &kp PG_UP  &kp RCTRL                     &kp JP_MINUS  &ch     &kp J  &kr       &kp L       &kp SEMI    &kp SQT
         &sk LSHFT &kp Z     &kp X    &kp C    &kp V      &kp B                               &kp END         &kp PG_DN                                              &kp N   &kp M  &kp COMMA &kp DOT     &kp FSLH    &kp JP_BSLH
         &mo FN    &kp GRAVE &kp LALT &kp LEFT &kp RIGHT                    &kp SP &kp RCTRL  &mt LALT MUHE   &hm LGUI HENK &sk LSHFT &kp ENTER                               &kp UP &kp DOWN  &kp JP_LBKT &kp JP_RBKT &mo MOD
       >;
